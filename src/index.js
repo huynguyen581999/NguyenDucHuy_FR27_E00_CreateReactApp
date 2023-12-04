@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import App from './App';
+
+let mau_nen = "yellow";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+renderH1();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function action() {
+  mau_nen = "blue";
+  renderH1();
+};
+
+function renderH1() {
+  const element = (
+    <h1
+      style={{
+        color: "red", backgroundColor: mau_nen
+      }}
+      onClick={action}
+    >
+      Bye, Kmin
+    </h1>
+  );
+  root.render(element);
+}
